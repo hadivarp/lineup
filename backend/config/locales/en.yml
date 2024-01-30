@@ -28,4 +28,26 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  errors:
+    template:
+      type_error: 'Please pass valid type'
+    access_denied: "Access Denied!"
+    sign_up:
+      email_invalid: "Your email is invalid."
+      already_signed_up: "User already has been signed up."
+    confirmation:
+      not_found: "User not found."
+      invalid_token: 'Your confirmation code is invalid.'
+      token_expired: 'Your confirmation code is expired.'
+      already_verified: 'User already has been verified.'
+    sign_in:
+      missing_params: 'Your login data is incorrect.'
+      not_verified: 'User is not verified.'
+      failed: 'Failed login'
+      deactivated: 'User has been deactivated.'
+    password:
+      mismatched_old_password: 'Old password is incorrect.'
+      mismatched_password_confirmation: 'mismatched password and password_confirmation.'
+    authentication:
+      unauthorized: "User unauthorized."
+      invalid_credentials: "Invalid User Credentials."

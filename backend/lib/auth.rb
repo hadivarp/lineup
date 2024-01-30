@@ -11,11 +11,16 @@ class Auth
 
   def self.decode(token)
     return {} if token.nil?
-
-    JWT.decode(token, auth_secret, true, algorithm: ALGORITHM).first
+    secret = auth_secret
+    begin
+      JWT.decode(token, secret, true, algorithm: ALGORITHM).first
+    rescue JWT::DecodeError => e
+      Rails.logger.error("Error decoding token: #{e.message}")
+      {}
+    end
   end
 
   def self.auth_secret
-    ENV['SECRET_KEY_BASE']
+    ENV['SECRET_KEY_BASE'] || 'secret_key'
   end
 end
