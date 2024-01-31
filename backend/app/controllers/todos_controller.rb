@@ -1,18 +1,37 @@
 class TodosController < BaseController
-  skip_before_action :verify_authenticity_token
-
   before_action :authenticate_user
+
+  skip_before_action :verify_authenticity_token
 
 
 
   def create
     result = Todo.create(create_params)
+    return render_blank_todo_title unless result
 
     if result.valid?
       head :no_content
     else
       render json: { errors: result.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+
+  def update
+
+  end
+
+
+  def index
+
+  end
+
+
+  def show; end
+
+
+  def delete
+
   end
 
 
@@ -23,10 +42,10 @@ class TodosController < BaseController
   end
 
 
-  def current_user
-    # Replace this with your logic to get the current user
-    # For example, you might use a session, token, or other authentication mechanism.
-    # This is just a placeholder; replace it with your actual logic.
-    User.first
+
+  def render_blank_todo_title
+    render json: { message: 'Something went wrong' }, status: :bad_request
   end
+
+
 end
