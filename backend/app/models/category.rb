@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  has_one :category_todo
-  has_one :todo, through: :category_todo
+  has_many :category_todos
+  has_many :todos, through: :category_todos
 
 
   validates :name, presence: true

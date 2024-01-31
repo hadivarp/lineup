@@ -1,6 +1,5 @@
 class Todo < ApplicationRecord
   belongs_to :user
-  # has_one category_todo
-  # has_one :category, through: :category_todo
-
+  has_many :category_todos
+  has_many :categories, through: :category_todos
 end

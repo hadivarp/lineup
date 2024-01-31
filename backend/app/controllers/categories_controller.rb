@@ -18,13 +18,13 @@ class CategoriesController < BaseController
   def update
     render_category_issues(:bad_request) unless @category.update(category_params)
 
-    render json: { message: "Category has successfully deleted." }, status: 200
+    render json: { message: "Category has successfully updated." }, status: 200
   end
 
   def destroy
     render_category_issues(:bad_request) unless @category.destroy
 
-    render json: { message: "Category has successfully updated." }, status: 200
+    render json: { message: "Category has successfully deleted." }, status: 200
 
   end
 
