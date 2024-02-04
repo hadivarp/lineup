@@ -1,8 +1,8 @@
 class CategoriesController < BaseController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_category, only: [:update, :destroy]
 
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def create
     @category = Category.new(category_params)

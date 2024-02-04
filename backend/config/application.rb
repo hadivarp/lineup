@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 
 module Backend
   class Application < Rails::Application
+
+    ENV['CORS_ENABLE'] = 'true'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
