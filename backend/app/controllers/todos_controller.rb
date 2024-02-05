@@ -1,8 +1,8 @@
 class TodosController < BaseController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_todo, only: [:update, :destroy]
 
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
 
 

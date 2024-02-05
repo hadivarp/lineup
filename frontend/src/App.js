@@ -8,6 +8,7 @@ import {
     UserOutlined,
     AppstoreOutlined,
 } from '@ant-design/icons';
+import Todo from './Todo';
 
 const { Header, Content, Sider } = Layout;
 
@@ -40,7 +41,7 @@ const App: React.FC = () => {
 
     const items1: Menu['props']['items'] = ['1', '2', '3'].map((key) => ({
         key,
-        label: `nav ${key}`,
+        label: `Profile ${key}`,
     }));
 
     const getCategoryIcon = (categoryName: string): React.ReactNode => {
@@ -96,6 +97,7 @@ const App: React.FC = () => {
                     {/*        <h2>Hi</h2>*/}
                     {/*    </div>*/}
                     {/*</Content>*/}
+                    <Todo />
                 </Layout>
             </Layout>
         </Layout>
